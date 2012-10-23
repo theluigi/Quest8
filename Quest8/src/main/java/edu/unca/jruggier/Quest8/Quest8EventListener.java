@@ -31,6 +31,7 @@ import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.event.player.PlayerBedEnterEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.world.ChunkLoadEvent;
 
 public class Quest8EventListener implements Listener {
@@ -70,7 +71,10 @@ public class Quest8EventListener implements Listener {
 		event.getPlayer().sendMessage("Goodnight, " + event.getPlayer().getName());
 		}	
 	
-	
+	public void onPlayerDeath(PlayerDeathEvent event) {
+		plugin.logger.info(event.getEntity().getName() + " has perished!");
+		event.getEntity().sendMessage("Tis a pity, " + event.getEntity().getName() + "you lived a good life.");
+	}
 	
 
 }
