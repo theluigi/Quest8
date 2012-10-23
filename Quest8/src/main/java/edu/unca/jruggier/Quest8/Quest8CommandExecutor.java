@@ -91,10 +91,22 @@ public class Quest8CommandExecutor implements CommandExecutor {
 			return true;
 		}
 			
+		else if (args[0].equalsIgnoreCase("bed")) {
+			Player p = (Player)sender;
+			PlayerInventory inventory = p.getInventory();
+			ItemStack bed= new ItemStack(Material.BED,1);
+			inventory.addItem(bed);
+			plugin.getLogger().info("You received a bed.");
+			plugin.logger.info("Gave bed to " + p);
+			return true;
+			
+		}
+		
+			
 			else {
 			return false;
 		}
 		}
-	}
+}
 
     
